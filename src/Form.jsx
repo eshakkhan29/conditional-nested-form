@@ -39,19 +39,19 @@ const Form = () => {
                 },
                 {
                     type: "text",
-                    name: "input2"
+                    name: "input"
                 },
                 {
                     type: "text",
-                    name: "input3"
+                    name: "input"
                 },
                 {
                     type: "text",
-                    name: "input4"
+                    name: "input"
                 },
                 {
                     type: "text",
-                    name: "input5"
+                    name: "input"
                 }
             ];
         });
@@ -100,14 +100,15 @@ const Form = () => {
                                 <input
                                     type={type}
                                     name={name + i}
-                                    placeholder={name}
-                                    {...register(name)}
+                                    placeholder={name + i}
+                                    {...register(name + i)}
                                 />
                                 <br />
                             </>
                         );
                     })
                 }
+                {inputGroups.length > 0 && <button onClick={addInputGroups}>Add Item</button>}
                 <input type="submit" />
             </form>
         </div>
